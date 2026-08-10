@@ -1,0 +1,25 @@
+---
+- name: Enterprise Security Baselining
+  hosts: aws_accounts
+  become: yes
+  tasks:
+    - name: Ensure OS security patches are applied
+      ansible.builtin.yum:
+        name: '*'
+        state: latest
+
+    - name: Install security monitoring agent (e.g., SSM Agent)
+      ansible.builtin.package:
+        name: amazon-ssm-agent
+        state: present
+
+    - name: Ensure SSM Agent is running
+      ansible.builtin.service:
+        name: amazon-ssm-agent
+        state: started
+        enabled: yes
+
+    - name: Verify compliance baseline audit
+      ansible.builtin.command: systemctl status amazon-ssm-agent
+      register: ssm_status
+      changed_when: false
