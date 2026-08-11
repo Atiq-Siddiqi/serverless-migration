@@ -1,6 +1,13 @@
-﻿# Local Terraform working directories and binaries
+# Local Terraform working directories, state files, and lock files
 .terraform/
 *.tfstate
 *.tfstate.backup
 .terraform.lock.hcl
+
+# Deployment archives and binary code packages
 *.zip
+*.tar.gz
+
+# Operating system generated files
+Thumbs.db
+.DS_Store
