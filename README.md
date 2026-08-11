@@ -1,6 +1,9 @@
 # Serverless Migration & Modernization Prototype: Strangler Fig Pattern on AWS
 Modernizing legacy enterprise systems without causing downtime or disrupting business operations is one of the most critical challenges in cloud architecture. To explore this, I designed and built an event-driven microservice prototype leveraging **AWS Lambda, API Gateway,** and **Amazon ECS** to benchmark zero-downtime cutovers using the **Strangler Fig Pattern.**
 
+## 🏛️  High-Level Architecture
+![Architecture Design](diagnostics/architecture-design.png)
+
 ## 🏗️ Architecture & Modernization Strategy
 The core objective of the **Strangler Fig Pattern** is to incrementally replace legacy components by routing specific traffic domains to modern cloud-native microservices while leaving legacy endpoints untouched until full deprecation.
 ```text
